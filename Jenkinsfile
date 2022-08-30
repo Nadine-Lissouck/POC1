@@ -22,7 +22,7 @@ node {
       def resourceGroup = 'PW-EnterpriseSPC-ResourceGroup'
       def webAppName = 'oacis-react-webapp-devops-test'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'ServicePrincipal', passwordVariable: '3Fh8Q~eTwyNCJ5wESpkgf3e2apfJSbNCNVfunb1m', usernameVariable: 'c8eda4d9-d837-4044-901d-0adeefae5681')]) {
+      withCredentials([usernamePassword(credentialsId: 'c8eda4d9-d837-4044-901d-0adeefae5681', passwordVariable: '3Fh8Q~eTwyNCJ5wESpkgf3e2apfJSbNCNVfunb1m', usernameVariable: 'c8eda4d9-d837-4044-901d-0adeefae5681')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
